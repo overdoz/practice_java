@@ -18,5 +18,15 @@ public class Vektor {
         coords.add(r);
     }
 
-    
+    public int[] getCoords() {
+        int[] a = new int[coords.size()];
+        for (int i = 0; i < coords.size(); i++) {
+            a[i] = coords.get(i);
+        }
+        return a;
+    }
+
+    public void setCoords() {
+        
+    }
 }

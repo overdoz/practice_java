@@ -447,7 +447,50 @@ public class Main {
 
     }
 
-    // Aufgabe 10-1
+    // Aufgabe Klausur 12/13
+    // 2a)
+
+    public static Boolean istQuadratZahl(int zahl) {
+        int startzahl = 0;
+        while (startzahl * startzahl < zahl) {
+            startzahl++;
+            if (startzahl * startzahl == zahl) {
+                return true;
+            } 
+            System.out.println(startzahl);
+            
+        }
+        return false;
+    }
+
+    // 2b)
+    public static void invertieren(int[] werte) {
+        int temp;
+        for (int i = 0; i < werte.length/2; i++) {
+            temp = werte[i];
+            werte[i] = werte[werte.length - 1 - i];
+            werte[werte.length - 1 - i] = temp;
+        }
+    }
+
+    // 2c)
+    public static Boolean isPalindrom(int[] werte) {
+        Boolean truthness = true;
+        for (int i = 0; i < werte.length/2; i++) {
+            if (werte[i] == werte[werte.length - 1 - i]) {
+                truthness = truthness && true;
+            } else {
+                truthness = truthness && false;
+            }
+        }
+        return truthness;
+        
+    }
+
+    // Abstract
+    // Interface
+    // terminierend, deterministisch...
+    // Linked List und Binärbaum
 
 
 
@@ -457,7 +500,11 @@ public class Main {
         Seminarraum zimmer1 = new Seminarraum();
         Seminarraum zimmer2 = new Seminarraum();
 
-        System.out.println(zimmer1.equals(zimmer2));
+        int[] array = new int[]{12, 7, 5, 6, 12};
+        invertieren(array);
+        System.out.println(Arrays.toString(array));
+
+        System.out.println(isPalindrom(array));
 
 
         // typecast();
