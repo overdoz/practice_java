@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Main {
 
 
@@ -446,9 +447,18 @@ public class Main {
 
     }
 
+    // Aufgabe 10-1
+
+
+
 
 
     public static void main(String[] args) {
+        Seminarraum zimmer1 = new Seminarraum();
+        Seminarraum zimmer2 = new Seminarraum();
+
+        System.out.println(zimmer1.equals(zimmer2));
+
 
         // typecast();
         sort(testArray);
