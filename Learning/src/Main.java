@@ -541,6 +541,8 @@ public class Main {
         return sum / array.length;
     }
 
+    
+
     // Abstract
     // Interface
     // terminierend, deterministisch...
