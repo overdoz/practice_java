@@ -505,11 +505,48 @@ public class Main {
 
     }
 
+    // Klausur 2014
+    //4a)
+    public static int quersumme(int temp ) {
+        int result = 0;
+        while (temp != 0) {
+            result += temp % 10;
+            temp /= 10;
+        }
+        return result;
+    }
+
+    public static int querRekursiv(int wert) {
+        if (wert == 0) {
+            return 0;
+        }
+        return (wert % 10) + querRekursiv(wert / 10);
+    }
+
+    // 4b)
+    public static int fakRek(int wert) {
+        if (wert == 0) {
+            return 1;
+        }
+        return wert * fakRek(wert - 1);
+    }
+
+    // 4c)
+    public static double durchschnitt(int[] array) {
+        double sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+            System.out.println(sum);
+        }
+        return sum / array.length;
+    }
+
     // Abstract
     // Interface
     // terminierend, deterministisch...
     // Linked List und Binärbaum
     // Hoare Kalkül
+    // UML
 
 
 
@@ -522,10 +559,15 @@ public class Main {
 
         int[] array = new int[]{1, 72, 45, 56, 122};
         int[] array2 = new int[]{12, 74, 52, 61, 12};
+        int[] array3 = new int[]{1, 2, 3, 5};
         //invertieren(array);
-        System.out.println(Arrays.toString(interleave(array, array2)));
+        // System.out.println(Arrays.toString(interleave(array, array2)));
+        System.out.println(quersumme(12345));
+        System.out.println(querRekursiv(12345));
+        System.out.println(fakRek(10));
+        System.out.println(durchschnitt(array3));
 
-        System.out.println(isPalindrom(array));
+        // System.out.println(isPalindrom(array));
 
 
         // typecast();
