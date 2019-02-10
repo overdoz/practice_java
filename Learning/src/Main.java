@@ -487,10 +487,30 @@ public class Main {
         
     }
 
+    // 2d)
+    public static int[] interleave(int[] werte1, int[] werte2) {
+        int[] result = new int[werte1.length + werte2.length];
+        int index = 0;
+        int index2 = 1;
+        int wert1 = 0;
+        
+        while (wert1 < werte1.length) {
+            result[index] = werte1[wert1];
+            result[index2] = werte2[wert1];
+            index += 2;
+            index2 += 2;
+            wert1++;
+        }
+        return result;
+
+    }
+
     // Abstract
     // Interface
     // terminierend, deterministisch...
     // Linked List und Binärbaum
+    // Hoare Kalkül
+
 
 
 
@@ -500,9 +520,10 @@ public class Main {
         Seminarraum zimmer1 = new Seminarraum();
         Seminarraum zimmer2 = new Seminarraum();
 
-        int[] array = new int[]{12, 7, 5, 6, 12};
-        invertieren(array);
-        System.out.println(Arrays.toString(array));
+        int[] array = new int[]{1, 72, 45, 56, 122};
+        int[] array2 = new int[]{12, 74, 52, 61, 12};
+        //invertieren(array);
+        System.out.println(Arrays.toString(interleave(array, array2)));
 
         System.out.println(isPalindrom(array));
 
