@@ -22,7 +22,16 @@ public class Liste<T> {
             temp = temp.getNext();
         }
 
+        if (temp == null) {
+            throw new Exception("Halt Stopp");
+        }
+
         prev.setNext(temp.getNext());
         return temp;
+    }
+
+    public void pushAt(Entry<T> data) {
+        data.setNext(firstEntry);
+        firstEntry = data;
     }
 }
