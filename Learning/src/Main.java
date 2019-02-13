@@ -565,10 +565,10 @@ public class Main {
     // Abstract
     // Interface
     // terminierend, deterministisch...
-    // Linked List und Binärbaum
+    // Linked List und Binärbaum (rekursive Datenstruktur)
     // Hoare Kalkül
     // UML
-
+    // Typsicherheit
 
 
 

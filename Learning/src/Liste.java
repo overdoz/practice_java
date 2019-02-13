@@ -9,4 +9,13 @@ public class Liste<T> {
     public int getSize() {
         return this.size;
     }
+
+    public T removeAt(int index) {
+        Entry<T> temp = firstEntry;
+
+        for (int i = 0; i < index + 1; i++) {
+            
+        }
+        return temp;
+    }
 }
