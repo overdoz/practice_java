@@ -562,42 +562,64 @@ public class Main {
         return temp;
     }
 
+    public static boolean isQu(int zahl) {
+        int i = 0;
+        while ((i*i) <= zahl) {
+            if ((i*i) == zahl) {
+                return true;
+            };
+            i++;
+            
+        };
+        return false;
+    }
+
+
+
     // Abstract
     // Interface
-    // terminierend, deterministisch...
     // Linked List und Binärbaum (rekursive Datenstruktur)
     // Hoare Kalkül
     // UML
     // Typsicherheit
 
+    public static boolean inv(int[] werte) {
+        int[] neu = werte;
+
+        for (int i = 0; i < werte.length / 2; i++) {
+            int tmp = werte[i];
+
+            werte[i] = werte[werte.length-i-1];
+            werte[werte.length-i-1] = tmp;
+
+        }
+
+        if (werte == neu) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isPali(int[] werte)
+    {
+        boolean ruckgabe = true;
+        for(int i = 0; i < werte.length/2; i++)
+        {
+            if(werte[i] != werte[werte.length-1-i])
+                {ruckgabe = false;}
+            
+        }
+            return ruckgabe;
+    }
+    
 
 
 
 
     public static void main(String[] args) {
-        Seminarraum zimmer1 = new Seminarraum();
-        Seminarraum zimmer2 = new Seminarraum();
-
-        int[] array = new int[]{1, 72, 45, 56, 122};
-        int[] array2 = new int[]{12, 74, 52, 61, 12};
-        int[] array3 = new int[]{1, 2, 3, 5};
-        //invertieren(array);
-        // System.out.println(Arrays.toString(interleave(array, array2)));
-        System.out.println(quersumme(12345));
-        System.out.println(querRekursiv(12345));
-        System.out.println(fakRek(10));
-        System.out.println(durchschnitt(array3));
-
-        // System.out.println(isPalindrom(array));
-
-
-        // typecast();
-        sort(testArray);
-
-        System.out.println(Arrays.toString(resize(testArray, 15)));
-        // auswerten();
-
-
+        int[] neu = new int[]{1,2,2,1};
+        isPali(neu);
+        System.out.println(inv(neu));
     }
 }
 
