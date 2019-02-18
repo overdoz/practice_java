@@ -611,15 +611,23 @@ public class Main {
         }
             return ruckgabe;
     }
+
+    
     
 
 
 
 
     public static void main(String[] args) {
-        int[] neu = new int[]{1,2,2,1};
-        isPali(neu);
-        System.out.println(inv(neu));
+        // A a = new A(3L);
+        System.out.println("A.x: " + A.x);
+        B b = new B(8);
+        System.out.println("A.x: " + A.x);
+        System.out.println("B.x: " + b.x);
+        System.out.println("A.y: " + A.y);
+        System.out.println((new A(new Long(3))).y);
+        System.out.println(A.y);
     }
 }
+
 
