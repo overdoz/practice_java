@@ -2,11 +2,10 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Main {
 
-
-    // Blatt 03 #################################################################################
+    // Blatt 03
+    // #################################################################################
 
     // Aufgabe 3-4
     public static void giveMeBeer() {
@@ -25,63 +24,54 @@ public class Main {
         }
     }
 
-
-
-
-    // Blatt 04 #################################################################################
+    // Blatt 04
+    // #################################################################################
 
     // Aufgabe 4-3 a)
     public static int ggT(int a, int b) {
-        while(b != 0) {
+        while (b != 0) {
             if (a > b) {
                 a = a - b;
-            } else  {
+            } else {
                 b = b - a;
             }
         }
         return a;
     }
 
-
-
-
     // Aufgabe 4-3 b)
     public static void ggTProdukt() {
 
         int kandidat = 1;
 
-        while(kandidat < 1000) {
+        while (kandidat < 1000) {
 
             kandidat = kandidat + 1;
 
             int ggTProdukt = 1;
             int i = 2;
-            while(i < kandidat) {
-                ggTProdukt = ggTProdukt * ggT(i,kandidat);
-                i = i+1;
+            while (i < kandidat) {
+                ggTProdukt = ggTProdukt * ggT(i, kandidat);
+                i = i + 1;
             }
 
-            if(ggTProdukt == 1) {
+            if (ggTProdukt == 1) {
                 System.out.print(" " + kandidat);
             }
         }
     }
 
-
-
-
-
-    // Blatt 05 #################################################################################
+    // Blatt 05
+    // #################################################################################
 
     // Aufgabe 5-2
     public static double quadratwurzel(double n, int i) {
         if (i == 0) {
             return (n + 1) / 2;
         } else {
-            return 0.5 * ( quadratwurzel (n,i - 1)+ n / quadratwurzel (n,i - 1));
+            return 0.5 * (quadratwurzel(n, i - 1) + n / quadratwurzel(n, i - 1));
         }
     }
-
 
     // Aufgabe 5-3
     public static double vietaFaktor(int n) {
@@ -93,27 +83,21 @@ public class Main {
     }
 
     public static double pi(int n) {
-        if(n == 0)
-            return 2.0/vietaFaktor(0);
+        if (n == 0)
+            return 2.0 / vietaFaktor(0);
         else
-            return 1.0/vietaFaktor(n)*pi(n-1);
+            return 1.0 / vietaFaktor(n) * pi(n - 1);
     }
-
 
     // Aufgabe 5-4
     public static double berechneDistanz(double x1, double y1, double x2, double y2) {
-        double dx = x2-x1;
-        double dy = y2-y1;
-        return quadratwurzel(dx*dx+dy*dy,10);
+        double dx = x2 - x1;
+        double dy = y2 - y1;
+        return quadratwurzel(dx * dx + dy * dy, 10);
     }
 
-
-
-
-
-
-    // Blatt 06 #################################################################################
-
+    // Blatt 06
+    // #################################################################################
 
     // Aufgabe 6-3 a)
     public static double potenz(double x, int y) {
@@ -133,13 +117,13 @@ public class Main {
         if (m == 0) {
             return 0;
         } else {
-            return  (m % 10) + spiegelzahl(m / 10);
+            return (m % 10) + spiegelzahl(m / 10);
         }
 
     }
 
     public static int stellen(long z) {
-        if (z  == 0) {
+        if (z == 0) {
             return 0;
         } else {
             return 1 + stellen(z / 10);
@@ -153,8 +137,6 @@ public class Main {
             return true;
         }
     }
-
-
 
     // Aufgabe 6-4
     public static int peer(int n) {
@@ -171,7 +153,6 @@ public class Main {
         }
     }
 
-
     // Aufgabe 6-5
     // a)
     public static int summeRek(int i) {
@@ -185,7 +166,7 @@ public class Main {
     // b)
     public static int summeIt(int i) {
         int temp = 0;
-        for (int j = 0; j < i + 1; j++ ) {
+        for (int j = 0; j < i + 1; j++) {
             temp = temp + j;
         }
         return temp;
@@ -214,7 +195,7 @@ public class Main {
             return 1;
         }
 
-        for (int i = 3; i < n+1; i ++) {
+        for (int i = 3; i < n + 1; i++) {
             fn = f2 + f1;
             f2 = f1;
             f1 = fn;
@@ -223,8 +204,8 @@ public class Main {
         return fn;
     }
 
-
-    // Blatt 07 #################################################################################
+    // Blatt 07
+    // #################################################################################
 
     // Aufgabe 7-1
 
@@ -234,9 +215,9 @@ public class Main {
         int z = 16;
 
         // (i)
-        System.out.println(10/4.); // double 2.5
+        System.out.println(10 / 4.); // double 2.5
         // (ii)
-        System.out.println(10/4); // int 2
+        System.out.println(10 / 4); // int 2
         // (iii)
         System.out.println(x == y ? x < y : y > z); // boolean false
         // (iv)
@@ -244,12 +225,11 @@ public class Main {
         // (v)
         // System.out.println(1 || 0); syntaktisch inkorrekt
         // (vi)
-        System.out.println((byte)(127+1)); // int -128
+        System.out.println((byte) (127 + 1)); // int -128
         // (vii)
         System.out.println('x' + y + z); // string 928
         // (viii)
         System.out.println(x + y + "z"); // string 21z
-
 
     }
 
@@ -261,10 +241,12 @@ public class Main {
 
     // Aufgabe 7-3
 
-    public static void e(){
+    public static void e() {
         int i = 0;
         int j = 42;
-        while(i < j ^ i > j); {
+        while (i < j ^ i > j)
+            ;
+        {
             i++;
             j--;
         }
@@ -273,7 +255,7 @@ public class Main {
         System.out.println(i + "  " + j);
     }
 
-    public static void f(){
+    public static void f() {
         int n = 1;
         double x = 0;
         double s;
@@ -292,48 +274,47 @@ public class Main {
         do {
             x = x + y;
             y = y / i;
-        } while(i++ <= n);
+        } while (i++ <= n);
 
         System.out.print("  " + x + "-" + y);
     }
-
 
     // Aufgabe 7-4
 
     private static boolean test = true;
 
-    public static void sortiere(int x, int y, int z){
+    public static void sortiere(int x, int y, int z) {
         int a = 0;
         a += (x > y ? 1 : 0);
         a += (x > z ? 2 : 0);
         a += (y > z ? 4 : 0);
 
-        switch(a) {
-            case 1:
-                ausgabe(y, x, z);
-                break;
-            case 4:
-                ausgabe(x, z, y);
-                break;
-            case 3:
-                ausgabe(y, z, x);
-                break;
-            case 6:
-                ausgabe(z, x, y);
-                break;
-            case 0:
-                ausgabe(x, y, z);
-                break;
-            case 7:
-                ausgabe(z, y ,x);
-                break;
+        switch (a) {
+        case 1:
+            ausgabe(y, x, z);
+            break;
+        case 4:
+            ausgabe(x, z, y);
+            break;
+        case 3:
+            ausgabe(y, z, x);
+            break;
+        case 6:
+            ausgabe(z, x, y);
+            break;
+        case 0:
+            ausgabe(x, y, z);
+            break;
+        case 7:
+            ausgabe(z, y, x);
+            break;
 
         }
 
     }
 
     public static void ausgabe(int a, int b, int c) {
-        if(a > b || a > c || b > c) {
+        if (a > b || a > c || b > c) {
             System.out.println("Da stimmt etwas nicht!");
             test = false;
         }
@@ -341,40 +322,39 @@ public class Main {
     }
 
     public static void auswerten() {
-        for(int i = 0; i < 10000; i++) {
-            int x,y,z;
+        for (int i = 0; i < 10000; i++) {
+            int x, y, z;
             Random random = new Random();
-            x = random.nextInt()%50+50;
-            y = random.nextInt()%50+50;
-            z = random.nextInt()%50+50;
+            x = random.nextInt() % 50 + 50;
+            y = random.nextInt() % 50 + 50;
+            z = random.nextInt() % 50 + 50;
             System.out.println(x + " " + y + " " + z);
-            sortiere(x,y,z);
+            sortiere(x, y, z);
         }
 
-        if(test)
+        if (test)
             System.out.println("--------------------\nAlles gut!");
         else
             System.out.println("--------------------\nLeider gab es Fehler!");
     }
 
-
-
-
-    // Blatt 08 #################################################################################
+    // Blatt 08
+    // #################################################################################
 
     // Aufgabe 8-1
 
-    public static int[] testArray = {1, 4, 6, 3, 46, 1, 34, 5, 26, 22};
+    public static int[] testArray = { 1, 4, 6, 3, 46, 1, 34, 5, 26, 22 };
 
-    public static int arrayGet (int[] array, int i) {
+    public static int arrayGet(int[] array, int i) {
         if (i < 0) {
             return array[0];
         } else if (i >= array.length) {
-            return array[array.length-1];
-        } else return array[i];
+            return array[array.length - 1];
+        } else
+            return array[i];
     }
 
-    public static int sum (int[] array) {
+    public static int sum(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
@@ -382,18 +362,18 @@ public class Main {
         return sum;
     }
 
-    public static double mean (int[] array) {
+    public static double mean(int[] array) {
         int temp = sum(array);
         return temp / array.length;
     }
 
-    public static void square (int[] array) {
+    public static void square(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] *= array[i];
         }
     }
 
-    public static int max (int[] array) {
+    public static int max(int[] array) {
         int max = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
@@ -426,24 +406,24 @@ public class Main {
 
     public static int[] resize(int[] array, int length) {
         int[] output;
-         if (length < array.length) {
-             output = new int[length];
-             for(int i = 0; i < length; i++) {
-                 output[i] = array[i];
-                 return output;
-             }
-         } else {
-             output = new int[length];
-             for (int i = 0; i < array.length; i++) {
-                 output[i] = array[i];
-             }
-             for (int i = array.length; i < length; i++) {
-                 output[i] = 0;
-             }
-             return output;
+        if (length < array.length) {
+            output = new int[length];
+            for (int i = 0; i < length; i++) {
+                output[i] = array[i];
+                return output;
+            }
+        } else {
+            output = new int[length];
+            for (int i = 0; i < array.length; i++) {
+                output[i] = array[i];
+            }
+            for (int i = array.length; i < length; i++) {
+                output[i] = 0;
+            }
+            return output;
 
-         }
-         return output;
+        }
+        return output;
 
     }
 
@@ -456,9 +436,9 @@ public class Main {
             startzahl++;
             if (startzahl * startzahl == zahl) {
                 return true;
-            } 
+            }
             System.out.println(startzahl);
-            
+
         }
         return false;
     }
@@ -466,7 +446,7 @@ public class Main {
     // 2b)
     public static void invertieren(int[] werte) {
         int temp;
-        for (int i = 0; i < werte.length/2; i++) {
+        for (int i = 0; i < werte.length / 2; i++) {
             temp = werte[i];
             werte[i] = werte[werte.length - 1 - i];
             werte[werte.length - 1 - i] = temp;
@@ -476,7 +456,7 @@ public class Main {
     // 2c)
     public static Boolean isPalindrom(int[] werte) {
         Boolean truthness = true;
-        for (int i = 0; i < werte.length/2; i++) {
+        for (int i = 0; i < werte.length / 2; i++) {
             if (werte[i] == werte[werte.length - 1 - i]) {
                 truthness = truthness && true;
             } else {
@@ -484,7 +464,7 @@ public class Main {
             }
         }
         return truthness;
-        
+
     }
 
     // 2d)
@@ -493,7 +473,7 @@ public class Main {
         int index = 0;
         int index2 = 1;
         int wert1 = 0;
-        
+
         while (wert1 < werte1.length) {
             result[index] = werte1[wert1];
             result[index2] = werte2[wert1];
@@ -506,8 +486,8 @@ public class Main {
     }
 
     // Klausur 2014
-    //4a)
-    public static int quersumme(int temp ) {
+    // 4a)
+    public static int quersumme(int temp) {
         int result = 0;
         while (temp != 0) {
             result += temp % 10;
@@ -564,17 +544,17 @@ public class Main {
 
     public static boolean isQu(int zahl) {
         int i = 0;
-        while ((i*i) <= zahl) {
-            if ((i*i) == zahl) {
+        while ((i * i) <= zahl) {
+            if ((i * i) == zahl) {
                 return true;
-            };
+            }
+            ;
             i++;
-            
-        };
+
+        }
+        ;
         return false;
     }
-
-
 
     // Abstract
     // Interface
@@ -589,8 +569,8 @@ public class Main {
         for (int i = 0; i < werte.length / 2; i++) {
             int tmp = werte[i];
 
-            werte[i] = werte[werte.length-i-1];
-            werte[werte.length-i-1] = tmp;
+            werte[i] = werte[werte.length - i - 1];
+            werte[werte.length - i - 1] = tmp;
 
         }
 
@@ -600,34 +580,28 @@ public class Main {
         return false;
     }
 
-    public static boolean isPali(int[] werte)
-    {
+    public static boolean isPali(int[] werte) {
         boolean ruckgabe = true;
-        for(int i = 0; i < werte.length/2; i++)
-        {
-            if(werte[i] != werte[werte.length-1-i])
-                {ruckgabe = false;}
-            
+        for (int i = 0; i < werte.length / 2; i++) {
+            if (werte[i] != werte[werte.length - 1 - i]) {
+                ruckgabe = false;
+            }
+
         }
-            return ruckgabe;
+        return ruckgabe;
     }
-
-    
-    
-
-
-
 
     public static void main(String[] args) {
-        // A a = new A(3L);
-        System.out.println("A.x: " + A.x);
-        B b = new B(8);
-        System.out.println("A.x: " + A.x);
-        System.out.println("B.x: " + b.x);
-        System.out.println("A.y: " + A.y);
-        System.out.println((new A(new Long(3))).y);
-        System.out.println(A.y);
+        A aa = new B();
+        // B b = new A();
+        // B bb = new A();
+        A aaa = new A();
+        B bbb = new B();
+        // a.mA();
+        // aa.mB();
+        // b.mB();
+        // bb.mA();
+        // aaa.mB();
+        // bbb.mA();
     }
 }
-
-
